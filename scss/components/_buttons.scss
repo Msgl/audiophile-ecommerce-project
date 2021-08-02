@@ -1,0 +1,60 @@
+@use '../base' as *;
+
+.myButton {
+  border: none;
+  padding: 12px;
+  width: 160px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  &.button-warm {
+    color: $clr-secondary-white;
+    background-color: $clr-main-warm;
+
+    &:hover {
+      background-color: $clr-secondary-warm;
+      color: $clr-secondary-black;
+    }
+  }
+
+  &.button-black {
+    background-color: $clr-main-black;
+    color: $clr-secondary-white;
+
+    &:hover {
+      background-color: $clr-secondary-black;
+    }
+  }
+
+  &.button-grey {
+    border: $clr-main-black solid 1px;
+    background-color: $clr-main-grey;
+    color: $clr-main-black;
+
+    &:hover {
+      color: $clr-secondary-white;
+      background-color: $clr-main-black;
+    }
+  }
+}
+
+input.myButton {
+  font-weight: 600;
+  &:hover {
+    color: $clr-red;
+  }
+}
+
+/*Remove default arrows Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*Remove default arrows Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,15 @@
+@use '../base' as *;
+
+nav {
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: $clr-secondary-white;
+
+    &:hover {
+      color: $clr-main-warm;
+    }
+  }
+}

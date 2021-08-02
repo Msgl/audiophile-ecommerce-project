@@ -1,0 +1,122 @@
+@use '../base' as *;
+
+$padding-top: 50px; //linked to padding top of footer & top position of ::before element of footer-logo
+
+footer {
+  background-color: $clr-main-black;
+  color: $clr-secondary-white;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  grid-template-columns: 10px 300px 10px;
+  padding-top: $padding-top;
+  padding-bottom: 50px;
+  row-gap: 50px;
+  grid-template-areas:
+    '. logo .'
+    '. nav .'
+    '. text .'
+    '. copyright .'
+    '. social .';
+
+  .footer-logo {
+    grid-area: logo;
+    place-self: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      top: -$padding-top;
+      left: 20px;
+      z-index: 10;
+      background-color: $clr-main-warm;
+    }
+  }
+
+  .footer-nav {
+    grid-area: nav;
+
+    li {
+      padding-bottom: 15px;
+    }
+  }
+
+  .footer-text {
+    grid-area: text;
+    opacity: 50%;
+  }
+
+  .footer-copyright {
+    grid-area: copyright;
+    opacity: 50%;
+  }
+
+  .footer-social {
+    grid-area: social;
+    img {
+      padding-left: 5px;
+      &:hover {
+        filter: brightness(0.4) sepia(0.4) hue-rotate(-28deg) saturate(8);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  footer {
+    justify-content: left;
+    text-align: left;
+    grid-template-columns: 10em 350px 10em;
+    grid-template-rows: 25px 25px auto 25px;
+    row-gap: 50px;
+
+    grid-template-areas:
+      '. logo logo .'
+      '. nav nav .'
+      '. text text .'
+      '. copyright social .';
+
+    .footer-logo {
+      justify-self: flex-start;
+    }
+
+    ul {
+      display: flex;
+      li {
+        padding-right: 30px;
+      }
+    }
+
+    .footer-social {
+      img {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  footer {
+    grid-template-columns: 10em 1fr 1fr 10em;
+    grid-template-rows: 25px auto 25px;
+    grid-template-areas:
+      '. logo  nav .'
+      '. text social .'
+      '. copyright . .';
+
+    ul {
+      justify-content: flex-end;
+      li {
+        padding-right: 0;
+        padding-left: 30px;
+      }
+    }
+
+    .footer-social {
+      place-self: flex-end;
+    }
+  }
+}

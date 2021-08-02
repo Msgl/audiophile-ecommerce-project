@@ -1,0 +1,82 @@
+@use '../base' as *;
+
+$card-border: 10px;
+
+.card {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 300px;
+  place-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  text-align: center;
+
+  .card-image {
+    background: $clr-main-grey;
+    border-radius: $card-border;
+  }
+
+  .card-text {
+    padding-top: 50px;
+
+    .overline {
+      color: $clr-main-warm;
+    }
+
+    p,
+    h2 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 15px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 550px;
+
+    .card-text {
+      width: 600px;
+      place-self: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .card {
+    place-content: flex-start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 590px;
+    text-align: left;
+    .card-text {
+      width: 450px;
+      margin-left: 100px;
+      align-self: center;
+      .overline,
+      p,
+      h2 {
+        padding-left: 0;
+      }
+    }
+
+    &.card-reverse {
+      .card-image {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .card-text {
+        grid-column: 1;
+        grid-row: 1;
+        margin-left: 0;
+        place-self: center flex-start;
+      }
+    }
+  }
+}

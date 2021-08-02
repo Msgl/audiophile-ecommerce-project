@@ -1,0 +1,17 @@
+@use 'base'; //_index.scss => reset + colors + typography
+@use 'layout/container';
+@use 'layout/header';
+@use 'layout/navigation';
+@use 'layout/category';
+@use 'layout/about';
+@use 'layout/footer';
+@use 'layout/specific-product';
+@use 'components/buttons';
+@use 'components/card';
+@use 'components/cart';
+@use 'components/checkout';
+@use 'home/home-hero';
+@use 'home/home-products';
+@use 'category-pages/category-pages';
+@use 'font-awesome/fontawesome.scss';
+@use 'font-awesome/solid.scss';

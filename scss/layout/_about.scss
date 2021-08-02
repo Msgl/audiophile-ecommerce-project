@@ -1,0 +1,68 @@
+@use '../base' as *;
+
+.about {
+  display: grid;
+  grid-template-rows: 300px 400px;
+
+  grid-template-columns: 327px;
+  grid-template-areas:
+    ' image '
+    ' text ';
+  place-content: center;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+  .image {
+    grid-area: image;
+    background-image: url(/assets/shared/mobile/image-best-gear.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  .text {
+    grid-area: text;
+    place-self: center;
+
+    h2 {
+      padding-bottom: 20px;
+    }
+    span {
+      color: $clr-main-warm;
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .about {
+    grid-template-columns: minmax(327px, 1fr);
+    .image {
+      background-image: url(/assets/shared/tablet/image-best-gear.jpg);
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .about {
+    grid-template-rows: 600px;
+    grid-template-columns: 1fr 1fr;
+
+    .text {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: left;
+      place-self: center;
+      margin-right: 100px;
+    }
+
+    .image {
+      grid-column: 2;
+      grid-row: 1;
+      background-image: url(/assets/shared/tablet/image-best-gear.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

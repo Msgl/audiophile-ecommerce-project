@@ -1,0 +1,46 @@
+@use '../base' as *;
+
+.hero {
+  background-color: $clr-main-black;
+  color: $clr-secondary-white;
+  background-image: url(/assets/home/mobile/image-header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  grid-template-columns: 300px;
+
+  h1,
+  p {
+    padding-top: 25px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .hero {
+    background-image: url(/assets/home/tablet/image-header.jpg);
+    grid-template-columns: 450px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .hero {
+    background-image: url(/assets/home/desktop/image-hero.jpg);
+    place-content: center left;
+    text-align: left;
+    padding-left: 5em;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .hero {
+    padding-left: 10em;
+  }
+}

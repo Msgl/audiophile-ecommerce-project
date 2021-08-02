@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Audiophile e-commerce website</title>
+  </head>
+
+  <body class="checkout-body">
+    <div class="container">
+      <header>
+        <button
+          class="toggle-button"
+          aria-label="toggle button"
+          onclick="toggleBtn()"
+        ></button>
+        <a href="index.html">
+          <img
+            class="header-logo"
+            src="/assets/shared/desktop/logo.svg"
+            alt="company logo"
+        /></a>
+        <nav class="subtitle" id="desktop-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="headphones.html">Headphones</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="earphones.html">Earphones</a></li>
+          </ul>
+        </nav>
+
+        <button class="cart-button" id="top-cart-button">
+          <span class="count-products-cart-nav">0</span>
+        </button>
+        <div class="cart-modal cart-modal cart-content cart-content-hide">
+          <div class="cart-header">
+            <h6>Cart(<span class="count-products-cart">0</span>)</h6>
+            <a class="clear-storage-button">Remove all</a>
+          </div>
+          <div class="user-products"></div>
+          <div class="cart-total">
+            <p class="subtitle">Total</p>
+            <p class="total-price">0</p>
+          </div>
+          <a class="myButton button-warm checkout-button" href="/checkout.html"
+            >Checkout</a
+          >
+        </div>
+
+        <nav class="menu" id="mobile-menu">
+          <div class="headphones">
+            <h6>Headphones</h6>
+            <a href="headphones.html" class="subtitle">Shop</a>
+          </div>
+          <div class="speakers">
+            <h6>Speakers</h6>
+            <a href="speakers.html" class="subtitle">Shop</a>
+          </div>
+          <div class="earphones">
+            <h6>Earphones</h6>
+            <a href="earphones.html" class="subtitle">Shop</a>
+          </div>
+        </nav>
+      </header>
+      <main class="checkout-main">
+        <a class="go-back-button" onclick="goBackButton()">Go Back</a>
+        <section class="checkout-form">
+          <h1>Checkout</h1>
+          <form>
+            <h6 class="subtitle">Billing Details</h6>
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Name</label>
+                <input
+                  type="text"
+                  placeholder="Alexei Ward"
+                  pattern="[a-zA-Z\s\-\x27]+"
+                  onfocusout="checkInputValidity(this)"
+                />
+              </div>
+              <div class="form-field">
+                <label>Email address</label>
+                <input
+                  type="email"
+                  placeholder="alexei@mail.com"
+                  onfocusout="checkInputValidity(this)"
+                />
+              </div>
+              <div class="form-field">
+                <label>Phone number</label>
+                <input type="number" placeholder="+1202-555-0136" />
+              </div>
+            </div>
+            <h6 class="subtitle">Shipping info</h6>
+            <div class="form-grid">
+              <div class="form-field form-address">
+                <label>Address</label>
+                <input
+                  type="text"
+                  placeholder="1137 Williams Avenue"
+                  pattern="[a-zA-Z0-9\s\-\x27]+"
+                  onfocusout="checkInputValidity(this)"
+                />
+              </div>
+              <div class="form-field">
+                <label>ZIP code</label>
+                <input type="number" placeholder="10001" />
+              </div>
+              <div class="form-field">
+                <label>City</label>
+                <input
+                  type="text"
+                  placeholder="New York"
+                  pattern="[a-zA-Z\s\-\x27]+"
+                  onfocusout="checkInputValidity(this)"
+                />
+              </div>
+              <div class="form-field">
+                <label>Country</label>
+                <input
+                  type="text"
+                  placeholder="United States"
+                  pattern="[a-zA-Z\s\-\x27]+"
+                  onfocusout="checkInputValidity(this)"
+                />
+              </div>
+            </div>
+            <h6 class="subtitle">Payment details</h6>
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Payment Method</label>
+              </div>
+              <div class="form-field">
+                <div class="input-radio">
+                  <input
+                    type="radio"
+                    id="online-payment"
+                    value="e-Money"
+                    name="payment"
+                  />
+                  e-Money
+                </div>
+                <br />
+                <div class="input-radio">
+                  <input
+                    type="radio"
+                    id="cash"
+                    value="Cash on Delivery"
+                    name="payment"
+                  />
+                  Cash on Delivery
+                </div>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>e-Money number</label>
+              <input type="number" placeholder="238521993" />
+            </div>
+
+            <div class="form-field">
+              <label>e-Money PIN</label>
+              <input type="password" placeholder="6891" maxlength="5" />
+            </div>
+          </form>
+        </section>
+
+        <section class="checkout-summary">
+          <!-- <div class="cart-content"> -->
+          <div class="cart-header">
+            <h4>Summary</h4>
+          </div>
+
+          <div class="summary-user-products"></div>
+
+          <div class="summary-total">
+            <p class="subtitle">Total</p>
+            <p class="summary-total-price subtitle">0</p>
+          </div>
+
+          <div class="summary-shipping">
+            <p class="subtitle">Shipping</p>
+            <p class="summary-shipping-price subtitle">0</p>
+          </div>
+
+          <div class="summary-vat">
+            <p class="subtitle">Vat (included)</p>
+            <p class="summary-vat-price subtitle">0</p>
+          </div>
+
+          <div class="summary-grand-total">
+            <p class="subtitle">Grand Total</p>
+            <p class="summary-grand-total-price subtitle">0</p>
+          </div>
+
+          <a class="myButton button-warm payment-button" onclick="openModal()"
+            >Continue & Pay</a
+          >
+
+          <div class="order-modal cart-shadow">
+            <div>
+              <i class="fas fa-check-circle"></i>
+              <h5>Thank you for your order</h5>
+              <p class="font-light">
+                You will receive an email confirmation shortly.
+              </p>
+              <div class="order-grid">
+                <div class="purchased-products grey-box new-product">
+                  <img src="" alt="" />
+                  <div>
+                    <h6>XX99 MK II</h6>
+                    <p class="font-light">$2,999</p>
+                  </div>
+                  <p class="font-light">x1</p>
+                </div>
+
+                <div class="grey-box-message">
+                  <p>and 2 other item(s)</p>
+                </div>
+
+                <div class="grand-total">
+                  <p class="subtitle font-light">Grand total</p>
+                  <p>$5,526</p>
+                </div>
+              </div>
+              <a
+                class="myButton button-warm back-to-home-button"
+                href="/index.html"
+                >Back to home</a
+              >
+            </div>
+          </div>
+          <!-- </div> -->
+        </section>
+        <!-- The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives 
+  at your residence. Just make sure your address is correct so that your order will not be cancelled.
+  
+  Summary
+  XX99 MK II x1
+  $2,999
+  
+  XX59 x2
+  $899
+  
+  YX1 x1
+  $599
+  
+  Total $5,396
+  Shipping $10
+  VAT $120
+  
+  Grand total $5,526
+  
+  Continue & pay -->
+      </main>
+    </div>
+    <footer>
+      <div class="footer-logo">
+        <img src="/assets/shared/desktop/logo.svg" alt="company logo" />
+      </div>
+
+      <nav class="subtitle footer-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headphones.html">Headphones</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="earphones.html">Earphones</a></li>
+        </ul>
+      </nav>
+
+      <p class="footer-text">
+        Audiophile is an all in one stop to fulfill your audio needs. We're a
+        small team of music lovers and sound specialists who are devoted to
+        helping you get the most out of personal audio. Come and visit our demo
+        facility - we’re open 7 days a week.
+      </p>
+
+      <p class="footer-copyright">Copyright 2021. All Rights Reserved</p>
+
+      <div class="footer-social">
+        <a href="#"
+          ><img
+            src="/assets/shared/desktop/icon-facebook.svg"
+            alt="facebook icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="/assets/shared/desktop/icon-twitter.svg"
+            alt="twitter icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="/assets/shared/desktop/icon-instagram.svg"
+            alt="instagram icon"
+        /></a>
+      </div>
+    </footer>
+
+    <script type="module" src="cart.js"></script>
+    <script src="checkout.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

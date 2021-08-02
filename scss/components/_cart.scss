@@ -1,0 +1,126 @@
+@use '../base' as *;
+
+.cart-content {
+  background-color: $clr-secondary-white;
+  color: $clr-main-black;
+  padding: 30px;
+  height: max-content;
+  width: 300px;
+  position: absolute;
+  border-radius: 10px;
+  top: 150px;
+  right: 10px;
+  z-index: 100;
+
+  .cart-header,
+  .cart-total {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .user-products {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr;
+    height: max-content;
+    row-gap: 20px;
+  }
+
+  .new-product {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 10px;
+  }
+
+  .name-price {
+    position: relative;
+    display: grid;
+    place-content: center start;
+    padding-left: 10px;
+
+    :nth-child(2) {
+      padding-left: 10px;
+      &::after {
+        content: '$';
+        position: absolute;
+        left: 0.5em;
+      }
+    }
+  }
+
+  .cart-quantity {
+    display: grid;
+    place-items: center;
+    background-color: $clr-main-grey;
+    font-weight: 600;
+  }
+}
+
+.clear-storage-button {
+  text-decoration: underline;
+  cursor: pointer;
+  color: $clr-secondary-black;
+  font-weight: 500;
+
+  &:hover {
+    color: $clr-main-warm;
+  }
+}
+
+.total-price {
+  font-weight: 600;
+}
+
+.checkout-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.cart-content-hide {
+  display: none;
+}
+
+.cart-shadow {
+  box-shadow: -200px 10100px 200px 10100px $clr-shadow-background;
+}
+
+.quantity-button {
+  font-weight: 600;
+  background-color: $clr-main-grey;
+
+  &:hover {
+    color: $clr-main-warm;
+  }
+}
+
+.count-products-cart-nav {
+  border: 2px solid $clr-secondary-white;
+  font-weight: 600;
+  color: $clr-secondary-white;
+  position: absolute;
+  border-radius: 20px;
+  width: 35px;
+  padding: 3px;
+  bottom: 8px;
+  right: -50px;
+}
+
+@media only screen and (min-width: 375px) {
+  .cart-content {
+    width: 300px;
+    right: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cart-content {
+    width: 400px;
+    right: 60px;
+  }
+}

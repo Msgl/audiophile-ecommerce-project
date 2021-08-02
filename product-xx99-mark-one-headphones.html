@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Audiophile e-commerce website</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <button
+          class="toggle-button"
+          aria-label="toggle button"
+          onclick="toggleBtn()"
+        ></button>
+        <a href="index.html">
+          <img
+            class="header-logo"
+            src="/assets/shared/desktop/logo.svg"
+            alt="company logo"
+        /></a>
+        <nav class="subtitle" id="desktop-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="headphones.html">Headphones</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="earphones.html">Earphones</a></li>
+          </ul>
+        </nav>
+        <button class="cart-button" id="top-cart-button">
+          <span class="count-products-cart-nav">0</span>
+        </button>
+        <div class="cart-modal cart-content cart-content-hide">
+          <div class="cart-header">
+            <h6>Cart(<span class="count-products-cart">0</span>)</h6>
+            <a class="clear-storage-button">Remove all</a>
+          </div>
+          <div class="user-products"></div>
+          <div class="cart-total">
+            <p class="subtitle">Total</p>
+            <p class="total-price">0</p>
+          </div>
+          <a class="myButton button-warm checkout-button" href="/checkout.html"
+            >Checkout</a
+          >
+        </div>
+
+        <nav class="menu" id="mobile-menu">
+          <div class="headphones">
+            <h6>Headphones</h6>
+            <a href="headphones.html" class="subtitle">Shop</a>
+          </div>
+          <div class="speakers">
+            <h6>Speakers</h6>
+            <a href="speakers.html" class="subtitle">Shop</a>
+          </div>
+          <div class="earphones">
+            <h6>Earphones</h6>
+            <a href="earphones.html" class="subtitle">Shop</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="specific-product-page">
+        <a class="go-back-button" onclick="goBackButton()">Go Back</a>
+
+        <section>
+          <div class="card">
+            <div class="card-image xx99-mark1"></div>
+            <div class="card-text">
+              <p class="overline">New product</p>
+              <h1>XX99 Mark I Headphones</h1>
+              <p>
+                As the gold standard for headphones, the classic XX99 Mark I
+                offers detailed and accurate audio reproduction for audiophiles,
+                mixing engineers, and music aficionados alike in studios and on
+                the go.
+              </p>
+              <h5>$1,750</h5>
+
+              <div class="add-cart-container">
+                <button
+                  class="myButton button-warm add-cart"
+                  data-product-name="XX99 Mark I Headphones"
+                >
+                  Add to cart
+                </button>
+                <div class="product-quantity">
+                  <button class="myButton" onclick="decreaseQuantity(this)">
+                    -
+                  </button>
+                  <input class="myButton" type="number" value="1" min="1" />
+                  <button class="myButton" onclick="increaseQuantity(this)">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="specific-product-wrapper">
+          <section class="features">
+            <h3>Features</h3>
+            <p>
+              As the headphones all others are measured against, the XX99 Mark I
+              demonstrates over five decades of audio expertise, redefining the
+              critical listening experience. This pair of closed-back headphones
+              are made of industrial, aerospace-grade materials to emphasize
+              durability at a relatively light weight of 11 oz.
+            </p>
+            <p>
+              From the handcrafted microfiber ear cushions to the robust metal
+              headband with inner damping element, the components work together
+              to deliver comfort and uncompromising sound. Its closed-back
+              design delivers up to 27 dB of passive noise cancellation,
+              reducing resonance by reflecting sound to a dedicated absorber.
+              For connectivity, a specially tuned cable is included with a
+              balanced gold connector.
+            </p>
+          </section>
+
+          <section class="in-the-box">
+            <h3>In the box</h3>
+            <table>
+              <tr>
+                <td class="in-the-box-accent">1x</td>
+                <td>Headphone unit</td>
+              </tr>
+              <tr>
+                <td class="in-the-box-accent">2x</td>
+                <td>Replacement earcups</td>
+              </tr>
+              <tr>
+                <td class="in-the-box-accent">1x</td>
+                <td>User manual</td>
+              </tr>
+              <tr>
+                <td class="in-the-box-accent">1x</td>
+                <td>3.5mm 5m audio cable</td>
+              </tr>
+            </table>
+          </section>
+
+          <section class="product-images">
+            <div class="product-image-first xx99-mark1"></div>
+            <div class="product-image-second xx99-mark1"></div>
+            <div class="product-image-third xx99-mark1"></div>
+          </section>
+        </div>
+
+        <section class="similar-products">
+          <h3>You may also like</h3>
+          <div class="similar-products-container">
+            <div class="small-card">
+              <div class="first-image xx99-mark1"></div>
+              <h5>XX99 Mark II</h5>
+              <button
+                class="myButton button-warm"
+                onclick="location.href = 'product-xx99-mark-two-headphones.html';"
+              >
+                See product
+              </button>
+            </div>
+
+            <div class="small-card">
+              <div class="second-image xx99-mark1"></div>
+              <h5>XX59</h5>
+              <button
+                class="myButton button-warm"
+                onclick="location.href =  'product-xx59-headphones.html';"
+              >
+                See product
+              </button>
+            </div>
+
+            <div class="small-card">
+              <div class="third-image xx99-mark1"></div>
+              <h5>ZX9 speaker</h5>
+              <button
+                class="myButton button-warm"
+                onclick="location.href = 'product-zx9-speaker.html';"
+              >
+                See product
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="category">
+          <div class="headphones">
+            <h6>Headphones</h6>
+            <a href="headphones.html" class="subtitle">Shop</a>
+          </div>
+          <div class="speakers">
+            <h6>Speakers</h6>
+            <a href="speakers.html" class="subtitle">Shop</a>
+          </div>
+          <div class="earphones">
+            <h6>Earphones</h6>
+            <a href="earphones.html" class="subtitle">Shop</a>
+          </div>
+        </section>
+
+        <section class="about">
+          <div class="image"></div>
+          <div class="text">
+            <h2>Bringing you the <span>best</span> audio gear</h2>
+            <p>
+              Located at the heart of New York City, Audiophile is the premier
+              store for high end headphones, earphones, speakers, and audio
+              accessories. We have a large showroom and luxury demonstration
+              rooms available for you to browse and experience a wide range of
+              our products. Stop by our store to meet some of the fantastic
+              people who make Audiophile the best place to buy your portable
+              audio equipment.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-logo">
+          <img src="/assets/shared/desktop/logo.svg" alt="company logo" />
+        </div>
+
+        <nav class="subtitle footer-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="headphones.html">Headphones</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="earphones.html">Earphones</a></li>
+          </ul>
+        </nav>
+
+        <p class="footer-text">
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 7 days a week.
+        </p>
+
+        <p class="footer-copyright">Copyright 2021. All Rights Reserved</p>
+
+        <div class="footer-social">
+          <a href="#"
+            ><img
+              src="/assets/shared/desktop/icon-facebook.svg"
+              alt="facebook icon"
+          /></a>
+          <a href="#"
+            ><img
+              src="/assets/shared/desktop/icon-twitter.svg"
+              alt="twitter icon"
+          /></a>
+          <a href="#"
+            ><img
+              src="/assets/shared/desktop/icon-instagram.svg"
+              alt="instagram icon"
+          /></a>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="cart.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

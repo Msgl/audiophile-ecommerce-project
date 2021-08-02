@@ -1,0 +1,72 @@
+@use '../base' as *;
+
+.category {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  grid-template-columns: 327px;
+  grid-template-rows: repeat(3, 250px);
+  gap: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  .headphones,
+  .speakers,
+  .earphones {
+    padding-top: 170px;
+    border-radius: 10px;
+
+    a {
+      color: $clr-main-black;
+      opacity: 80%;
+      text-decoration: none;
+      position: relative;
+      &::after {
+        content: url(/assets/shared/desktop/icon-arrow-right.svg);
+        position: absolute;
+        left: 50px;
+        top: -2px;
+      }
+    }
+  }
+
+  .headphones {
+    background: url(/assets/shared/desktop/image-headphones.png) center top
+        no-repeat,
+      linear-gradient(0deg, $clr-main-grey 80%, transparent 0%);
+    background-size: 180px;
+  }
+
+  .speakers {
+    background: url(/assets/shared/desktop/image-speakers.png) center top
+        no-repeat,
+      linear-gradient(0deg, $clr-main-grey 80%, transparent 0%);
+    background-size: 180px;
+  }
+  .earphones {
+    background: url(/assets/shared/desktop/image-earphones.png) center top
+        no-repeat,
+      linear-gradient(0deg, $clr-main-grey 80%, transparent 0%);
+    background-size: 180px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .category {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 217px;
+    gap: 1em;
+
+    .headphones,
+    .speakers,
+    .earphones {
+      padding-top: 150px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .category {
+    gap: 5em;
+  }
+}

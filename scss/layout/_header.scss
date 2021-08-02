@@ -1,0 +1,166 @@
+@use '../base' as *;
+
+header {
+  background-color: $clr-main-black;
+  color: $clr-secondary-white;
+  border-bottom: 1px solid #979797;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 4em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  #desktop-menu {
+    display: none;
+  }
+
+  #mobile-menu {
+    display: none;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 100vw;
+    padding-top: 25px;
+    padding-bottom: 50px;
+    background-color: $clr-secondary-white;
+    &.active-btn {
+      display: grid;
+    }
+  }
+
+  .menu {
+    z-index: 10;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    grid-template-columns: 327px;
+    gap: 20px;
+    margin-top: 100px;
+
+    &::after {
+      content: '';
+      width: 100vw;
+      height: 2500px;
+      position: absolute;
+      background: rgba(0, 0, 0);
+      opacity: 0.7;
+      left: 0;
+      top: 830px;
+      z-index: -10;
+    }
+    .headphones,
+    .speakers,
+    .earphones {
+      padding-top: 170px;
+      padding-bottom: 20px;
+      border-radius: 10px;
+
+      h6 {
+        color: $clr-main-black;
+      }
+      a {
+        color: $clr-main-black;
+        opacity: 80%;
+        text-decoration: none;
+        position: relative;
+        &::after {
+          content: url(/assets/shared/desktop/icon-arrow-right.svg);
+          position: absolute;
+          left: 50px;
+          top: -2px;
+        }
+      }
+    }
+
+    .headphones {
+      background: url(/assets/shared/desktop/image-headphones.png) center top
+          no-repeat,
+        linear-gradient(0deg, $clr-main-grey 80%, transparent 0%);
+      background-size: 180px;
+    }
+
+    .speakers {
+      background: url(/assets/shared/desktop/image-speakers.png) center top
+          no-repeat,
+        linear-gradient(0deg, $clr-main-grey 80%, transparent 0%);
+      background-size: 180px;
+    }
+    .earphones {
+      background: url(/assets/shared/desktop/image-earphones.png) center top
+          no-repeat,
+        linear-gradient(0deg, $clr-main-grey 80%, transparent 0%);
+      background-size: 180px;
+    }
+  }
+
+  .toggle-button,
+  .cart-button {
+    width: 25px;
+    height: auto;
+    border: none;
+    cursor: pointer;
+  }
+
+  .toggle-button {
+    background: url(/assets/shared/mobile/icon-hamburger.svg) no-repeat;
+    background-size: contain;
+  }
+
+  .cart-button {
+    background: url(/assets/shared/desktop/icon-cart.svg) no-repeat;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  header {
+    padding-left: 5em;
+    padding-right: 7em;
+
+    #mobile-menu {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .menu {
+      z-index: 10;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      grid-template-columns: repeat(3, 220px);
+      grid-template-rows: 250px;
+      gap: 20px;
+      margin-top: 100px;
+      &::after {
+        top: 410px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  header {
+    padding-left: 10em;
+    padding-right: 10em;
+    z-index: 0;
+
+    .toggle-button {
+      display: none;
+    }
+
+    #desktop-menu {
+      display: flex;
+      width: 600px;
+      background-color: $clr-main-black;
+      z-index: 0;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+}

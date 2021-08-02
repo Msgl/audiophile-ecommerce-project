@@ -1,0 +1,171 @@
+@use '../base' as *;
+
+$card-border: 10px;
+
+.products {
+  display: grid;
+  text-align: center;
+  place-content: center;
+  grid-template-columns: 327px;
+  grid-template-rows: 650px 320px 424px;
+  grid-template-areas:
+    ' top '
+    ' middle '
+    ' bottom ';
+  row-gap: 80px;
+  h1,
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  .products-top {
+    grid-area: top;
+    display: grid;
+    grid-template-rows: 300px auto;
+
+    .top-image {
+      background-color: $clr-main-warm;
+      background-image: url(/assets/home/mobile/image-speaker-zx9.png),
+        url(/assets/home/desktop/pattern-circles.svg);
+      background-repeat: no-repeat;
+      background-size: auto 237px, 500px;
+      background-position: center, center;
+      border-top-left-radius: $card-border;
+      border-top-right-radius: $card-border;
+    }
+
+    .top-text {
+      background-color: $clr-main-warm;
+      color: $clr-secondary-white;
+      display: grid;
+      grid-template-columns: 250px;
+      place-content: center;
+      place-items: center;
+      border-bottom-left-radius: $card-border;
+      border-bottom-right-radius: $card-border;
+
+      p {
+        padding: 15px;
+      }
+
+      button {
+        margin: 10px;
+      }
+    }
+  }
+
+  .products-middle {
+    grid-area: middle;
+    background-color: $clr-main-grey;
+    background-image: url(/assets/home/mobile/image-speaker-zx7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    display: grid;
+    place-content: center left;
+    border-radius: $card-border;
+    padding-left: 30px;
+  }
+
+  .products-bottom {
+    grid-area: bottom;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 80px;
+    grid-template-areas:
+      'image'
+      'text';
+    .bottom-image {
+      grid-area: image;
+      background-image: url(/assets/home/mobile/image-earphones-yx1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $card-border;
+    }
+
+    .bottom-text {
+      grid-area: text;
+      background-color: $clr-main-grey;
+      border-radius: $card-border;
+      text-align: left;
+      padding-top: 50px;
+      padding-left: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .products {
+    grid-template-columns: 1fr;
+    .products-top {
+      .top-image {
+        background-image: url(/assets/home/tablet/image-speaker-zx9.png);
+      }
+    }
+
+    .products-middle {
+      background-image: url(/assets/home/tablet/image-speaker-zx7.jpg);
+    }
+
+    .products-bottom {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 300px;
+      grid-template-areas: 'image text';
+
+      .bottom-image {
+        background-image: url(/assets/home/tablet/image-earphones-yx1.jpg);
+      }
+      .bottom-text {
+        padding-left: 70px;
+        padding-top: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .products {
+    .products-top {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+
+      .top-image {
+        border-top-left-radius: $card-border;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: $card-border;
+        border-bottom-right-radius: 0;
+
+        background-image: url(/assets/home/desktop/image-speaker-zx9.png);
+        background-position: bottom;
+        background-size: 60%;
+      }
+
+      .top-text {
+        text-align: left;
+        border-top-left-radius: 0;
+        border-top-right-radius: $card-border;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: $card-border;
+        place-items: start;
+        p {
+          padding: 0;
+        }
+
+        button {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .products-middle {
+      background-image: url(/assets/home/desktop/image-speaker-zx7.jpg);
+    }
+
+    .products-bottom {
+      .bottom-image {
+        background-image: url(/assets/home/desktop/image-earphones-yx1.jpg);
+      }
+    }
+  }
+}
