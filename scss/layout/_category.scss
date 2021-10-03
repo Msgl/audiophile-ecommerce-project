@@ -7,25 +7,33 @@
   grid-template-columns: 327px;
   grid-template-rows: repeat(3, 250px);
   gap: 100px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 
   .headphones,
   .speakers,
   .earphones {
     padding-top: 170px;
     border-radius: 10px;
-
+    transform: scale(1);
     a {
       color: $clr-main-black;
       opacity: 80%;
       text-decoration: none;
       position: relative;
+      &:hover {
+        opacity: 1;
+        font-weight: bold;
+      }
       &::after {
         content: url(/assets/shared/desktop/icon-arrow-right.svg);
         position: absolute;
-        left: 50px;
-        top: -2px;
+        left: 45px;
+        top: -1px;
+      }
+      &:hover::after {
+        left: 60px;
+        transition: left 1s ease-out;
       }
     }
   }
@@ -68,5 +76,51 @@
 @media only screen and (min-width: 1400px) {
   .category {
     gap: 5em;
+  }
+}
+
+.animate-categories {
+  animation-name: animationCategories;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes animationCategories {
+  0% {
+   transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-from-right {
+  animation-name: animationFromRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes animationFromRight {
+  0% {
+    transform: translateX(+50em);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-from-left {
+  animation-name: animationFromLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes animationFromLeft {
+  0% {
+    transform: translateX(-50em);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

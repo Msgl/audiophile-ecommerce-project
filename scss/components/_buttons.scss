@@ -5,39 +5,68 @@
   padding: 12px;
   width: 160px;
   cursor: pointer;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
-
+  position: relative;
+  color: black;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.4s ease-out;
+ 
   &.button-warm {
-    color: $clr-secondary-white;
-    background-color: $clr-main-warm;
-
-    &:hover {
-      background-color: $clr-secondary-warm;
-      color: $clr-secondary-black;
-    }
+      color: $clr-secondary-white;
+      background-color: $clr-main-warm;
+      &::before {
+        background-color: $clr-secondary-warm;
+      }
   }
 
   &.button-black {
-    background-color: $clr-main-black;
     color: $clr-secondary-white;
-
-    &:hover {
+    background-color: $clr-main-black;
+    &::before {
       background-color: $clr-secondary-black;
     }
   }
 
   &.button-grey {
     border: $clr-main-black solid 1px;
-    background-color: $clr-main-grey;
     color: $clr-main-black;
-
-    &:hover {
-      color: $clr-secondary-white;
+    background-color: $clr-main-grey;
+    &::before {
       background-color: $clr-main-black;
     }
   }
+
+ &::before{
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   z-index: -1;
+   transform-origin: bottom left;
+   transform: translateX(-20rem);
+   transition: transform 0.5s;
+ }
+
+ &:hover{
+   background-color: transparent;
+   &.button-warm {
+    color: $clr-secondary-black;
+  }
+  &.button-grey {
+    color: $clr-secondary-white;;
+  }
+ }
+
+ &:hover::before {
+   transform: translateX(0px);
+ }
+
 }
 
 input.myButton {

@@ -10,7 +10,7 @@
       sizes="32x32"
       href="./assets/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
@@ -74,57 +74,73 @@
         </nav>
       </header>
 
-      <div class="hero">
-        <div class="hero-text">
+      <div class="hero hero-animation">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide slide-one active"></div>
+            <div class="slide slide-two inactive"></div>
+            <div class="slide slide-three inactive"></div>
+          </div>
+        </div>
+        <div class="hero-text" id="heroTextAnimation">
+        <!-- </div> -->
           <p class="overline">New product</p>
           <h1>XX99 Mark II Headphones</h1>
           <p>
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button
+          <div>
+            <button
             class="myButton button-warm"
             onclick="location.href = 'product-xx99-mark-two-headphones.html';"
           >
             See product
           </button>
+          <div class="slider-buttons">
+            <img src="/assets/buttons/icon-prev.svg" class="prev" alt="previous button">
+            <img src="/assets/buttons/icon-next.svg" class="next" alt="next button">
+        </div>
+          </div>
+
         </div>
       </div>
       <main>
-        <section class="category">
-          <div class="headphones">
+        <section class="category" >
+          <div class="headphones hidden" id="categoryHeadphones">
             <h6>Headphones</h6>
             <a href="headphones.html" class="subtitle">Shop</a>
           </div>
-          <div class="speakers">
+          <div class="speakers hidden" id="categorySpeakers">
             <h6>Speakers</h6>
             <a href="speakers.html" class="subtitle">Shop</a>
           </div>
-          <div class="earphones">
+          <div class="earphones hidden" id="categoryEarphones">
             <h6>Earphones</h6>
             <a href="earphones.html" class="subtitle">Shop</a>
           </div>
         </section>
 
         <section class="products">
-          <div class="products-top">
-            <div class="top-image"></div>
-            <div class="top-text">
-              <h2>ZX9 speaker</h2>
-              <p>
-                Upgrade to premium speakers that are phenomenally built to
-                deliver truly remarkable sound.
-              </p>
-              <button
+          <div class="products-top" >
+            <div class="top-image" ></div>
+            <div class="top-text" >
+              <div id="top-product">
+                <h2>ZX9 speaker</h2>
+                <p>
+                  Upgrade to premium speakers that are phenomenally built to
+                  deliver truly remarkable sound.
+                </p>
+                <button
                 class="myButton button-black"
                 onclick="location.href = 'product-zx9-speaker.html';"
-              >
-                See product
-              </button>
+              >  See product
+            </button>
+              </div>
             </div>
           </div>
           <div class="products-middle">
-            <div>
+            <div id="middle-product">
               <h4>ZX7 speaker</h4>
               <button
                 class="myButton button-grey"
@@ -137,13 +153,15 @@
           <div class="products-bottom">
             <div class="bottom-image"></div>
             <div class="bottom-text">
-              <h4>YX1 earphones</h4>
-              <button
-                class="myButton button-grey"
-                onclick="location.href = 'product-earphones.html';"
-              >
-                See product
-              </button>
+              <div id="bottom-product">
+                <h4>YX1 earphones</h4>
+                <button
+                  class="myButton button-grey"
+                  onclick="location.href = 'product-earphones.html';"
+                >
+                  See product
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -209,5 +227,6 @@
 
     <script type="module" src="cart.js"></script>
     <script src="scripts.js"></script>
+    <script src="animation.js"></script>
   </body>
 </html>
