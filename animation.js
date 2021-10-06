@@ -2,22 +2,27 @@
 
 
 //Animation for categories 
-let categoryHeadphones = document.getElementById("categoryHeadphones");
-let categorySpeakers =  document.getElementById("categorySpeakers");
-let categoryEarphones = document.getElementById("categoryEarphones");
+const categoryHeadphones = document.getElementById("categoryHeadphones");
+const categorySpeakers =  document.getElementById("categorySpeakers");
+const categoryEarphones = document.getElementById("categoryEarphones");
 
-let topProductText = document.getElementById("top-product");
-let middleProductText = document.getElementById("middle-product");
-let bottomProductText = document.getElementById("bottom-product");
+const topProductText = document.getElementById("top-product");
+const middleProductText = document.getElementById("middle-product");
+const bottomProductText = document.getElementById("bottom-product");
 
-let heroText = document.getElementById("heroTextAnimation");
+const heroText = document.getElementById("heroTextAnimation");
 
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+const hero = document.querySelector('.hero');
+const heroCredit = document.querySelector('.hero-copyright');
 
 window.addEventListener('load', function () {
     heroText.classList.add('animate-from-left');
     hero.classList.add('lightText');
+    // heroCredit.innerHTML = credit.first;
 });
-
 
 
 window.addEventListener('scroll', function () {
@@ -46,12 +51,6 @@ window.addEventListener('scroll', function () {
 
 //HERO SLIDDER
 //buttons
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-
-const hero = document.querySelector('.hero');
-
-
 next.addEventListener('click', function(){
     const slide = document.querySelector('.active'); 
     const firstSlide = document.querySelector('.slide-one'); //the first slide, so that we can reset the slider
@@ -64,9 +63,10 @@ next.addEventListener('click', function(){
         hero.classList.add("darkText");
     } else{
         firstSlide.classList.replace("inactive", "active");
-        hero.classList.replace("darkText","lightText");
+        hero.classList.replace("darkText", "lightText");
     }
 });
+
 
 
 prev.addEventListener('click', function(){
@@ -78,9 +78,10 @@ prev.addEventListener('click', function(){
     // (lastSlide) of our content as active.
     if(slide.previousElementSibling){
         slide.previousElementSibling.classList.replace("inactive", "active");
-        hero.classList.replace("darkText","lightText");
+        hero.classList.replace("darkText", "lightText");
     } else{
         lastSlide.classList.replace("inactive", "active");
-        hero.classList.replace("lightText","darkText");
+        hero.classList.replace("lightText", "darkText");
     }
 });
+

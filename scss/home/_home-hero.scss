@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
   display: grid;
   place-content: center;
@@ -27,6 +27,39 @@
   & > .active-two {
     color: black;
   }
+
+  
+
+}
+
+
+.credit-button {
+  position: relative;
+  height: 30px;
+  background-color: white;
+}
+
+.hero-copyright {
+  z-index: 10;
+  h3{
+    margin-bottom: 20px;
+  }
+  background-color: $clr-main-warm;
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: left;
+  padding: 20px;
+  a {
+    color: black;
+  }
+}
+
+.hide {
+  display: none;
 }
 
 .slide {

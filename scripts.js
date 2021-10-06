@@ -28,3 +28,8 @@ function decreaseQuantity(elem) {
 function goBackButton() {
   window.history.back();
 }
+
+const creditDiv = document.getElementById('credit-div');
+function showCredit() {
+    creditDiv.classList.toggle('hide');
+}
