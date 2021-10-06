@@ -1549,7 +1549,7 @@ input[type=number] {
   z-index: 10;
   background-color: #b9581f;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   height: auto;
   display: flex;
   flex-direction: column;
